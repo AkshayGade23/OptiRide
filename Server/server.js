@@ -82,6 +82,7 @@ function getProviderNames(result, providersData) {
 
 app.post('/getData', async (req, res) => {
     data = req.body
+    providerScores = new Map();
     query1 = "select * from rides where vehicle =" + data.vehicle + " and src = '" + data.source + "' and  dest = '" + data.destination + "'";
 
     connection.query(query1, (err, results) => {
@@ -119,6 +120,7 @@ var id = -1;
 
 app.post('/postCustomerDetails',async (req, res) => {
     details = req.body;
+    console.log(details);
     query1 = "insert into rides(cust_id,src,dest,duration,cost,prov_id,vehicle) values('"+details.cust_id+"','"+details.src+"','"+details.dest+"','"+details.duration+"',"+details.cost+","+details.prov_id+","+details.vehicle+"  );"
 
     connection.query(query1,(err,result) =>{

@@ -16,11 +16,11 @@ class Chartt extends StatelessWidget {
           color: charts.ColorUtil.fromDartColor(Colors.blue)),
       ChartModel(
           provider: "Rapido",
-          score: providerScores['Rapido'],
+          score: providerScores['RAPIDO'],
           color: charts.ColorUtil.fromDartColor(Colors.green)),
       ChartModel(
           provider: "Uber",
-          score: providerScores['Uber'],
+          score: providerScores['UBER'],
           color: charts.ColorUtil.fromDartColor(Colors.red)),
     ];
 

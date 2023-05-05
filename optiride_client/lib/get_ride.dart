@@ -35,12 +35,16 @@ class _GetRideState extends State<GetRide> {
       providerScores = jsonDecode(res);
       // print(providerScores['Uber']);
 
-      var bestProvider = providerScores['Uber'];
-      String bestProviderName = 'Uber';
+      var bestProvider = providerScores['UBER'];
+      String bestProviderName = 'UBER';
+      if(providerScores.length == 0) bestProviderName = "Not available";
       // for (var i = 0; i < providerScores.length; i++) {
       //     if(bestProvider < providerScores)
+
+print(providerScores);
       // }
       final Map providerScores1 = providerScores;
+
       providerScores1.forEach((key, value) {
         if (value > bestProvider) {
           bestProviderName = key;
